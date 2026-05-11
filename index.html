@@ -1,153 +1,1170 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>Quantum.io · 国际超心理与中国传统文化</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Quantum.io：国际超心理与中国传统文化（Parapsychology & Chinese Tradition）。">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum.io｜国际超心理与中国传统文化</title>
+  <meta name="description" content="Quantum.io：国际超心理、中国传统文化、UFO档案、量子与意识研究、张一方教授学术档案馆。" />
+
   <style>
     :root {
-      --bg:#f7f5f1;
-      --ink:#111;
-      --muted:#5b5b5b;
-      --card:#fff;
-      --line:#e5e1da;
-      --accent:#294e6a;
+      --ink: #101827;
+      --muted: #5b6678;
+      --line: rgba(16,24,39,.12);
+      --paper: #f7f1e7;
+      --white: #ffffff;
+      --blue: #123d86;
+      --gold: #c58a2c;
+      --red: #9b1c31;
+      --shadow: 0 24px 80px rgba(16,24,39,.12);
+      --radius: 28px;
     }
 
-    * { box-sizing:border-box; }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      margin:0;
-      font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.75;
-      color:var(--ink);
-      background: linear-gradient(180deg,#faf7f0 0%,#f2efe6 100%);
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(197,138,44,.16), transparent 34%),
+        radial-gradient(circle at 82% 8%, rgba(18,61,134,.13), transparent 32%),
+        linear-gradient(180deg, var(--paper), #fbf7ef 42%, #f1eadf 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.75;
     }
 
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .wrap { width:min(1020px,calc(100% - 40px)); margin:0 auto; }
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin-inline: auto;
+    }
 
     .topbar {
-      position:sticky;
-      top:0;
-      background:rgba(255,255,255,.85);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-      z-index:10;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247,241,231,.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .topbar .inner {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 0;
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .brand { font-weight:700; letter-spacing:.06em; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
 
-    .nav { display:flex; gap:18px; font-size:14px; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--ink), var(--blue));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 32px rgba(11,42,91,.22);
+    }
 
-    .hero { padding:60px 0 40px 0; }
-    .hero h1 { margin:0; font-size:38px; line-height:1.1; }
-    .hero .tagline { margin:12px 0 0; color:var(--muted); }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: -4px;
+    }
 
-    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; margin-top:28px; }
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(16,24,39,.72);
+    }
+
+    .navlinks a {
+      padding: 10px 8px;
+      border-radius: 999px;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+      background: rgba(18,61,134,.06);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 900;
+    }
+
+    .hero {
+      overflow: hidden;
+      padding: 82px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 12px;
+      border: 1px solid rgba(18,61,134,.14);
+      background: rgba(255,255,255,.58);
+      border-radius: 999px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+    }
+
+    .hero-sub {
+      margin: 24px 0 0;
+      max-width: 690px;
+      color: #445063;
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      font-weight: 950;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: #fff;
+      box-shadow: 0 16px 42px rgba(16,24,39,.22);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      background: var(--blue);
+    }
+
+    .btn.ghost {
+      background: rgba(255,255,255,.62);
+      border-color: var(--line);
+    }
+
+    .btn.ghost:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
+
+    .hero-card {
+      position: relative;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(145deg, rgba(16,24,39,.96), rgba(11,42,91,.92));
+      border-radius: var(--radius);
+      padding: 28px;
+      color: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      inset: -40% -30% auto auto;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,138,44,.36), transparent 66%);
+    }
+
+    .hero-card > * {
+      position: relative;
+    }
+
+    .constellation {
+      height: 180px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 20% 26%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 53% 18%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 78% 46%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 35% 72%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 65% 78%, #fff 0 2px, transparent 3px),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .constellation:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(28deg, transparent 20%, rgba(255,255,255,.16) 20.5%, transparent 21%),
+        linear-gradient(155deg, transparent 40%, rgba(255,255,255,.14) 40.5%, transparent 41%),
+        linear-gradient(78deg, transparent 56%, rgba(197,138,44,.22) 56.5%, transparent 57%);
+    }
+
+    .hero-card h2 {
+      font-size: 25px;
+      line-height: 1.35;
+      margin: 22px 0 10px;
+    }
+
+    .hero-card p {
+      color: rgba(255,255,255,.76);
+      margin: 0;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .metric {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .metric b {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,.68);
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      max-width: 760px;
+    }
+
+    .kicker {
+      font-size: 13px;
+      font-weight: 1000;
+      color: var(--red);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.13;
+      letter-spacing: -.045em;
+      font-weight: 1000;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 14px 0 0;
+      font-size: 16px;
+      max-width: 720px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
     .card {
-      grid-column:span 4;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(16,24,39,.06);
+      transition: .25s ease;
     }
 
-    .card h3 { margin:0 0 8px 0; font-size:18px; }
-    .card p { margin:0; color:var(--muted); font-size:14px; }
-
-    @media (max-width: 900px) {
-      .hero { padding-top:40px; }
-      .hero h1 { font-size:32px; }
-      .card { grid-column:span 12; }
-      .nav { display:none; }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      background: #fff;
     }
 
-    .section { padding:40px 0; border-top:1px solid var(--line); }
-    .section h2 { margin:0 0 14px 0; font-size:22px; }
-    .section p { margin:0 0 10px 0; }
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(18,61,134,.09);
+      color: var(--blue);
+      font-weight: 1000;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 14px 42px rgba(16,24,39,.07);
+    }
+
+    .panel.dark {
+      background: linear-gradient(145deg, var(--ink), #16243d);
+      color: #fff;
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .panel.dark p,
+    .panel.dark li {
+      color: rgba(255,255,255,.72);
+    }
+
+    .split,
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .check {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(197,138,44,.18);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 1000;
+      margin-top: 3px;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .toc-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(16,24,39,.04);
+      border: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    .toc-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .quote {
+      padding: 22px;
+      border-left: 4px solid var(--gold);
+      background: rgba(197,138,44,.08);
+      border-radius: 0 22px 22px 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .notice {
+      border: 1px solid rgba(155,28,49,.14);
+      background: rgba(155,28,49,.06);
+      border-radius: 24px;
+      padding: 22px;
+      color: #6b1221;
+    }
+
+    .archive-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr 180px 180px;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .input,
+    .select {
+      width: 100%;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.84);
+      padding: 0 14px;
+      color: var(--ink);
+      outline: none;
+      font-weight: 700;
+    }
+
+    .input:focus,
+    .select:focus {
+      border-color: rgba(18,61,134,.5);
+      box-shadow: 0 0 0 4px rgba(18,61,134,.09);
+    }
+
+    .papers {
+      display: grid;
+      gap: 14px;
+    }
+
+    .paper {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      border-radius: 22px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .year {
+      font-size: 28px;
+      font-weight: 1000;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .paper h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.38;
+    }
+
+    .paper .cn {
+      font-weight: 900;
+      color: #2d3647;
+      margin-bottom: 8px;
+    }
+
+    .paper p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 5px 9px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .level {
+      background: rgba(155,28,49,.08);
+      color: var(--red);
+      border-color: rgba(155,28,49,.13);
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .grade {
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.68);
+    }
+
+    .grade b {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: var(--ink);
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .grade h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .grade p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
     .footer {
-      padding:26px 0;
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-      border-top:1px solid var(--line);
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .magazine-grid,
+      .archive-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .evidence {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .paper {
+        grid-template-columns: 1fr;
+      }
+
+      .navlinks {
+        display: none;
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        top: 76px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .navlinks.open {
+        display: grid;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .cards,
+      .toc,
+      .evidence {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="topbar">
-    <div class="wrap inner">
-      <div class="brand">Quantum.io</div>
-      <nav class="nav" aria-label="页面导航">
-        <a href="#domain">领域与方向</a>
-        <a href="#project">项目与资料</a>
-        <a href="#method">方法与训练</a>
-        <a href="#contact">合作与联系</a>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">Q</span>
+        <span>
+          Quantum.io
+          <small>国际超心理与中国传统文化</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" type="button">菜单</button>
+
+      <nav class="navlinks" id="navlinks" aria-label="主导航">
+        <a href="#magazine">国际杂志</a>
+        <a href="#archive">张一方档案馆</a>
+        <a href="#papers">论文库</a>
+        <a href="#method">方法与证据</a>
+        <a href="#contact">合作</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="top">
     <section class="hero">
-      <h1>国际超心理与中国传统文化</h1>
-      <p class="tagline">Quantum.io：在边界上做研究，在传统里找落点。</p>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="pill">UFO 档案</span>
+            <span class="pill">超心理研究</span>
+            <span class="pill">中国传统文化</span>
+            <span class="pill">量子与意识</span>
+          </div>
 
-      <div class="grid" role="list">
-        <div class="card" role="listitem">
-          <h3>研究</h3>
-          <p>以史料为底，以方法校准。少玄学，多证据。</p>
+          <h1>国际超心理<br />与中国传统文化</h1>
+
+          <p class="hero-sub">
+            Quantum.io 不是神秘故事仓库，而是一个边界清楚的研究入口：
+            收集材料，标明来源，建立证据等级，把 UFO、超心理、传统文化与量子理论
+            放进可讨论、可质疑、可归档的结构里。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#archive">进入张一方教授学术档案馆</a>
+            <a class="btn ghost" href="#magazine">查看国际杂志规划</a>
+          </div>
         </div>
-        <div class="card" role="listitem">
-          <h3>文化</h3>
-          <p>把传统语言翻译成现代语法。先通俗，再深入。</p>
+
+        <aside class="hero-card" aria-label="网站定位卡片">
+          <div class="constellation"></div>
+          <h2>材料要野，编辑要冷。</h2>
+          <p>
+            敢接 UFO、超心理、人体科学与传统文化材料；
+            但所有内容先分层：事实、口述、假说、模型、争鸣。
+            未经验证的，不伪装成结论。
+          </p>
+
+          <div class="metric-row">
+            <div class="metric">
+              <b>01</b>
+              <span>国际杂志</span>
+            </div>
+            <div class="metric">
+              <b>02</b>
+              <span>论文档案</span>
+            </div>
+            <div class="metric">
+              <b>03</b>
+              <span>开放争鸣</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="position">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <div class="kicker">Position</div>
+            <h2>网站定位：不是玄学门面，是研究总入口</h2>
+            <p>
+              平台账号负责传播，网站负责沉淀。首页必须一眼讲清楚：
+              我们研究什么，如何记录，证据如何分级，哪些内容只是材料，
+              哪些内容可以进入论文讨论。
+            </p>
+          </div>
         </div>
-        <div class="card" role="listitem">
-          <h3>训练</h3>
-          <p>状态训练、记录与复盘。先做动作，再谈成果。</p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">刊</div>
+            <h3>国际杂志</h3>
+            <p>《国际超心理与中国传统文化》电子刊、目录、征稿、专题和编委信息。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">档</div>
+            <h3>UFO 与口述档案</h3>
+            <p>目击报告、访谈、照片、视频、天气、方位、证据等级统一归档。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">张</div>
+            <h3>张一方学术档案</h3>
+            <p>整理 Yi-Fang Chang / 张一方教授论文、预印本、访谈与交叉科学资料。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">证</div>
+            <h3>方法与证据</h3>
+            <p>把“我看见了”变成时间、地点、角度、设备、证词、数据与可反驳命题。</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="domain" class="section">
-      <h2>领域与方向</h2>
-      <p>涉及：国际超心理学的研究脉络，中国传统文化的核心要义，以及二者如何互相照见。</p>
-      <p>重点永远是：可重复，能落地。</p>
+    <section id="magazine">
+      <div class="container magazine-grid">
+        <div class="panel dark">
+          <div class="kicker" style="color:#e6b35b;">Journal</div>
+          <h2>《国际超心理与中国传统文化》</h2>
+          <p>
+            建议定位为季刊 / 电子试刊：以 UFO、超心理、意识研究、中国传统文化、
+            量子与交叉科学为主题，建立华文异常现象研究的资料入口。
+          </p>
+
+          <ul class="list">
+            <li><span class="check">✓</span><span>收录现象，不急着下结论。</span></li>
+            <li><span class="check">✓</span><span>尊重传统，不替代科学。</span></li>
+            <li><span class="check">✓</span><span>开放讨论，不鼓励迷信。</span></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin-top:0;font-size:24px;">栏目设置</h3>
+
+          <div class="toc">
+            <div class="toc-item">卷首语<span>天问与人心</span></div>
+            <div class="toc-item">特别专题<span>每期一个主线</span></div>
+            <div class="toc-item">UFO 观察档案<span>案例编号与证据等级</span></div>
+            <div class="toc-item">超心理研究<span>实验、访谈、争鸣</span></div>
+            <div class="toc-item">传统文化研究<span>易学、道家、古籍</span></div>
+            <div class="toc-item">量子与意识<span>文献、模型、边界</span></div>
+            <div class="toc-item">张一方档案<span>论文与访谈资料</span></div>
+            <div class="toc-item">方法论<span>记录表与审核流程</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="project" class="section">
-      <h2>项目与资料</h2>
-      <p>这里会逐步放上：关键文献梳理、案例记录、以及你的实践笔记。</p>
-      <p>短句先到位，细节按节奏补上。</p>
+    <section id="archive">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <div class="kicker">Academic Archive</div>
+            <h2>张一方教授学术档案馆</h2>
+            <p>
+              这一栏是网站的学术压舱石。处理方式不能造神，要档案化：
+              论文、预印本、访谈、研究方向、引用线索、版权状态、争鸣评论，
+              一条一条落地。
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <h3 style="font-size:24px;margin-top:0;">档案馆首页结构</h3>
+
+            <ul class="list">
+              <li><span class="check">✓</span><span>人物小传：张一方 / Yi-Fang Chang，云南大学物理系。</span></li>
+              <li><span class="check">✓</span><span>学术年表：学习、任教、研究会、论坛、论文发表节点。</span></li>
+              <li><span class="check">✓</span><span>论文库：按正式期刊、arXiv、中文论文、待核验资料分类。</span></li>
+              <li><span class="check">✓</span><span>专题：量子理论、粒子物理、宇宙学、生物物理、UFO 与交叉科学。</span></li>
+              <li><span class="check">✓</span><span>争鸣：支持、质疑、反驳、编辑部按语。</span></li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="quote">
+              论文库不是功德碑，是兵器架。每一篇都要能查得到、引得出、问得住。
+            </div>
+
+            <div class="archive-intro">
+              <div class="notice">
+                <b>版权边界：</b><br />
+                开放获取、arXiv、作者授权稿可以放全文；付费期刊与来源不明 PDF 只放题录和外链。
+              </div>
+
+              <div class="notice">
+                <b>学术边界：</b><br />
+                UFO、超心理、量子意识等内容按材料、假说、模型、争鸣分层，不伪装成定论。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="method" class="section">
-      <h2>方法与训练</h2>
-      <p>用一个轻量的训练框架：记录、对照、复盘三步。把“玄”变成可训练。</p>
-      <p>你只需要先开始。</p>
+    <section id="papers">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <div class="kicker">Paper Database</div>
+            <h2>论文库样例：先做可检索题录</h2>
+            <p>
+              下面是首页可展示的样例数据。正式上线时，把每篇论文补齐 DOI、卷期页码、
+              PDF 状态、授权状态、引用格式和外部链接。
+            </p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <input class="input" id="searchInput" type="search" placeholder="搜索题名、方向、期刊……" />
+
+          <select class="select" id="topicSelect">
+            <option value="all">全部方向</option>
+            <option value="量子理论">量子理论</option>
+            <option value="宇宙学">宇宙学</option>
+            <option value="粒子物理">粒子物理</option>
+            <option value="生物物理">生物物理</option>
+          </select>
+
+          <select class="select" id="typeSelect">
+            <option value="all">全部类型</option>
+            <option value="正式期刊">正式期刊</option>
+            <option value="预印本">预印本</option>
+          </select>
+        </div>
+
+        <div class="papers" id="paperList"></div>
+      </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>合作与联系</h2>
-      <p>合作逻辑：先聊目标，再定边界，再行动。避免空谈。</p>
-      <p>联系方式暂不公开。需要时，通过仓库留言/issue 即可。</p>
+    <section id="method">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <div class="kicker">Method</div>
+            <h2>证据等级：把故事关进笼子</h2>
+            <p>
+              任何 UFO、超心理、传统文化经验材料进入网站，都先做来源分级。
+              没有分级，资料越多越乱；有了分级，质疑者也知道该从哪里下刀。
+            </p>
+          </div>
+        </div>
+
+        <div class="evidence">
+          <div class="grade">
+            <b>A</b>
+            <h3>原始来源</h3>
+            <p>期刊官网、出版社、DOI、arXiv、开放数据库。</p>
+          </div>
+
+          <div class="grade">
+            <b>B</b>
+            <h3>授权材料</h3>
+            <p>作者授权稿、访谈录音、原始照片、原始视频。</p>
+          </div>
+
+          <div class="grade">
+            <b>C</b>
+            <h3>索引记录</h3>
+            <p>百度学术、Google Scholar、Semantic Scholar 等题录。</p>
+          </div>
+
+          <div class="grade">
+            <b>D</b>
+            <h3>口述材料</h3>
+            <p>亲历者叙述、研究者回忆、媒体采访。</p>
+          </div>
+
+          <div class="grade">
+            <b>E</b>
+            <h3>待核验</h3>
+            <p>二手转述、来源不明 PDF、同名作者疑似混入。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="panel dark">
+          <div class="kicker" style="color:#e6b35b;">Cooperation</div>
+          <h2>合作与投稿</h2>
+          <p>
+            欢迎提交 UFO 目击资料、超心理研究文章、传统文化研究稿、张一方教授论文线索、
+            海外文献翻译、反驳与争鸣文章。来稿请注明来源、时间、地点、作者、版权状态和可核验线索。
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn primary"
+              style="background:#fff;color:#101827;"
+              href="https://github.com/qinhong919/Quantum.io/issues"
+              target="_blank"
+              rel="noreferrer"
+            >
+              通过 GitHub Issue 提交线索
+            </a>
+
+            <a
+              class="btn ghost"
+              style="color:#fff;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.08);"
+              href="#papers"
+            >
+              返回论文库
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div>Powered by GitHub Pages · 最后更新：2026-05-11</div>
+    <div class="container footer-grid">
+      <div>
+        <b>Quantum.io</b> · 国际超心理与中国传统文化 · 资料保存、论文索引、公开争鸣
+      </div>
+      <div>最后更新：2026-05-12</div>
+    </div>
   </footer>
+
+  <script>
+    const papers = [
+      {
+        year: 2002,
+        title: "Development of the Titius-Bode Law and the Extensive Quantum Theory",
+        cn: "提丢斯-波德定律的发展与广义量子理论",
+        venue: "Physics Essays, 15(2):133–137",
+        topic: "量子理论 / 天体物理",
+        type: "正式期刊",
+        level: "A",
+        status: "已核验题录"
+      },
+      {
+        year: 2007,
+        title: "Negative Matter, Repulsion Force, Dark Matter, Phantom and Theoretical Test",
+        cn: "负物质、斥力、暗物质、幻影场与理论检验",
+        venue: "arXiv",
+        topic: "宇宙学 / 负物质",
+        type: "预印本",
+        level: "B",
+        status: "开放预印本"
+      },
+      {
+        year: 2008,
+        title: "Loop Quantum Theory Applied to Biology and Nonlinear Whole Biology",
+        cn: "环量子理论在生物学与非线性整体生物学中的应用",
+        venue: "arXiv",
+        topic: "生物物理 / 量子生物学",
+        type: "预印本",
+        level: "B",
+        status: "开放预印本"
+      },
+      {
+        year: 2008,
+        title: "Mass Formulas Derived by Symmetry Breaking and Prediction of Masses on Heavy Flavor Hadrons",
+        cn: "由对称破缺导出的质量公式及重味强子质量预测",
+        venue: "arXiv:0803.0087",
+        topic: "粒子物理 / 强子质量公式",
+        type: "预印本",
+        level: "B",
+        status: "开放预印本"
+      },
+      {
+        year: 2009,
+        title: "Nonlinear Quantum Theory, Development of the Superposition Principle and Possible Tests",
+        cn: "非线性量子理论、叠加原理的发展与可能检验",
+        venue: "arXiv",
+        topic: "量子理论 / 非线性量子理论",
+        type: "预印本",
+        level: "B",
+        status: "开放预印本"
+      },
+      {
+        year: 2013,
+        title: "Quantized Phenomena in Astronomy and Astronomic Quantum Theory",
+        cn: "天文学中的量子化现象与天文量子理论",
+        venue: "International Journal of Sciences, 02:58–73",
+        topic: "宇宙学 / 天体量子化",
+        type: "正式期刊",
+        level: "A",
+        status: "已核验题录"
+      },
+      {
+        year: 2014,
+        title: "Extensive Quantum Theory of DNA and Biological String",
+        cn: "DNA 与生物弦的广义量子理论",
+        venue: "NeuroQuantology, 12(3):356–363",
+        topic: "生物物理 / DNA",
+        type: "正式期刊",
+        level: "A",
+        status: "待补 DOI / PDF"
+      },
+      {
+        year: 2020,
+        title: "Negative Matter as Unified Dark Matter and Dark Energy: Simplest Model, Theory and Nine Tests",
+        cn: "负物质作为统一暗物质与暗能量：最简模型、理论与九项检验",
+        venue: "International Journal of Fundamental Physical Sciences, 10(4):40–54",
+        topic: "宇宙学 / 负物质",
+        type: "正式期刊",
+        level: "A",
+        status: "开放获取"
+      }
+    ];
+
+    const paperList = document.getElementById("paperList");
+    const searchInput = document.getElementById("searchInput");
+    const topicSelect = document.getElementById("topicSelect");
+    const typeSelect = document.getElementById("typeSelect");
+    const menuBtn = document.getElementById("menuBtn");
+    const navlinks = document.getElementById("navlinks");
+
+    function renderPapers() {
+      const q = searchInput.value.trim().toLowerCase();
+      const topic = topicSelect.value;
+      const type = typeSelect.value;
+
+      const filtered = papers.filter((p) => {
+        const hay = `${p.title} ${p.cn} ${p.venue} ${p.topic} ${p.type}`.toLowerCase();
+        const matchQ = !q || hay.includes(q);
+        const matchTopic = topic === "all" || p.topic.includes(topic);
+        const matchType = type === "all" || p.type === type;
+        return matchQ && matchTopic && matchType;
+      });
+
+      if (!filtered.length) {
+        paperList.innerHTML = `<div class="panel">没有匹配记录。换个关键词，别让搜索框替你偷懒。</div>`;
+        return;
+      }
+
+      paperList.innerHTML = filtered.map((p) => `
+        <article class="paper">
+          <div class="year">${p.year}</div>
+
+          <div>
+            <h3>${p.title}</h3>
+            <div class="cn">${p.cn}</div>
+            <p>${p.venue}</p>
+
+            <div class="tags">
+              <span class="tag">${p.topic}</span>
+              <span class="tag">${p.type}</span>
+              <span class="tag level">来源 ${p.level} 级</span>
+              <span class="tag">${p.status}</span>
+            </div>
+          </div>
+
+          <a class="btn ghost" href="#contact">补充链接</a>
+        </article>
+      `).join("");
+    }
+
+    [searchInput, topicSelect, typeSelect].forEach((el) => {
+      el.addEventListener("input", renderPapers);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      navlinks.classList.toggle("open");
+    });
+
+    navlinks.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        navlinks.classList.remove("open");
+      });
+    });
+
+    renderPapers();
+  </script>
 </body>
 </html>
