@@ -1,46 +1,264 @@
 [
   {
-    "slug": "josephson-academic-network",
-    "href": "articles/josephson-academic-network.html",
-    "category": "scholar",
+    "journal": {
+      "title_cn": "超心理學和中華傳統文化國際雜誌",
+      "title_en": "International Journal of Parapsychology and Traditional Chinese Culture",
+      "abbrev": "IJPTCC",
+      "issn_print": "2693-8456",
+      "issn_online": "2693-8464"
+    },
+    "issue": {
+      "year": "2026",
+      "volume": "1",
+      "issue": "1",
+      "label_cn": "2026 年 · 第 1 卷 · 第 1 期",
+      "label_en": "2026, Vol. 1, No. 1"
+    },
+    "article_id": "IJPTCC-2026-1-1-001",
+    "article_no": "001",
     "type": "Featured Scholar",
-    "titleZh": "Brian D. Josephson 学术网络",
-    "titleEn": "Brian D. Josephson Academic Network",
-    "authorsZh": "本刊编辑部",
-    "authorsEn": "Editorial Office",
-    "date": "2026-06-29"
+    "section": "重要学者 / Featured Scholar",
+    "title_cn": "Brian D. Josephson 学术网络",
+    "title_en": "Brian D. Josephson Academic Network",
+    "authors": [
+      {
+        "name_cn": "本刊编辑部",
+        "name_en": "Editorial Office",
+        "role": "compiler"
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "1",
+        "name_cn": "超心理學和中華傳統文化國際雜誌编辑部",
+        "name_en": "Editorial Office, International Journal of Parapsychology and Traditional Chinese Culture"
+      }
+    ],
+    "abstract_cn": "Brian D. Josephson 为剑桥大学教授，1973年诺贝尔物理学奖获得者，也是 Mind–Matter Unification Project 的指导者。本文根据张一方教授提供的资料和 Josephson 教授公开主页，整理其与心物问题、组织复杂性、意识研究、量子理论边界及超常现象相关的学术网络，供本刊读者进入其研究脉络。",
+    "abstract_en": "Brian D. Josephson, Professor at the University of Cambridge and Nobel Laureate in Physics 1973, is Director of the Mind–Matter Unification Project. This profile summarizes selected public academic resources connected with his work on mind-matter issues, organised complexity, consciousness studies, the limits of quantum theory, and anomalous phenomena.",
+    "keywords_cn": [
+      "Brian D. Josephson",
+      "心物统一",
+      "意识研究",
+      "组织复杂性",
+      "超心理学",
+      "科学开放性"
+    ],
+    "keywords_en": [
+      "Brian D. Josephson",
+      "mind-matter unification",
+      "consciousness studies",
+      "organised complexity",
+      "parapsychology",
+      "openness in science"
+    ],
+    "received": null,
+    "accepted": null,
+    "published": "2026-06-29",
+    "doi": "Pending",
+    "license": "Open Access; copyright retained by authors unless otherwise stated.",
+    "url": "articles/josephson-academic-network.html",
+    "pdf": "Coming Soon",
+    "citation_cn": "本刊编辑部：《Brian D. Josephson 学术网络》，《超心理學和中華傳統文化國際雜誌》，2026，1(1)，Article 001。",
+    "citation_en": "Editorial Office. Brian D. Josephson Academic Network. International Journal of Parapsychology and Traditional Chinese Culture, 2026, 1(1), Article 001.",
+    "status": "published"
   },
   {
-    "slug": "psychokinesis-plant-granules",
-    "href": "articles/psychokinesis-plant-granules.html",
-    "category": "research",
-    "type": "Original Research Article",
-    "titleZh": "意念力與植物顆粒相互作用的實驗研究",
-    "titleEn": "An Experimental Study on the Influence of the Power of Thought on Plant Granules",
-    "authorsZh": "孔令宏，容志毅",
-    "authorsEn": "Linghong Kong; Zhiyi Rong",
-    "date": "2026-06-27"
-  },
-  {
-    "slug": "article-001",
-    "href": "articles/article-001.html",
-    "category": "research",
-    "type": "Original Research Article",
-    "titleZh": "世界超心理学的比较研究和中华超心理学特色",
-    "titleEn": "The Comparative Study of World Parapsychology and Characters of Chinese Parapsychology",
-    "authorsZh": "张一方",
-    "authorsEn": "Yi-Fang Chang",
-    "date": "2026-06-20"
-  },
-  {
-    "slug": "editorial",
-    "href": "articles/editorial.html",
-    "category": "editorial",
+    "journal": {
+      "title_cn": "超心理學和中華傳統文化國際雜誌",
+      "title_en": "International Journal of Parapsychology and Traditional Chinese Culture",
+      "abbrev": "IJPTCC",
+      "issn_print": "2693-8456",
+      "issn_online": "2693-8464"
+    },
+    "issue": {
+      "year": "2026",
+      "volume": "1",
+      "issue": "1",
+      "label_cn": "2026 年 · 第 1 卷 · 第 1 期",
+      "label_en": "2026, Vol. 1, No. 1"
+    },
+    "article_id": "IJPTCC-2026-1-1-002",
+    "article_no": "002",
     "type": "Editorial",
-    "titleZh": "勇于求索，诗意人生——对真理的追求高于生命",
-    "titleEn": "A Life of Exploration and Poetry — The Pursuit of Truth Is Above Life Itself",
-    "authorsZh": "张一方",
-    "authorsEn": "Yi-Fang Chang",
-    "date": "2026-06-20"
+    "section": "发刊词 / Editorial",
+    "title_cn": "勇于求索，诗意人生——对真理的追求高于生命",
+    "title_en": "A Life of Exploration and Poetry — The Pursuit of Truth Is Above Life Itself",
+    "authors": [
+      {
+        "name_cn": "张一方",
+        "name_en": "Yi-Fang Chang"
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "1",
+        "name_cn": "云南大学物理系",
+        "name_en": "Department of Physics, Yunnan University"
+      }
+    ],
+    "abstract_cn": "本文为《超心理學和中華傳統文化國際雜誌》创刊发刊词，阐述本刊创办缘起、求索精神与开放获取方向，强调对真理的持续追求以及跨学科研究的必要性。",
+    "abstract_en": "This editorial introduces the founding spirit of the journal, its commitment to open access, and its emphasis on sustained inquiry, intellectual courage, and interdisciplinary studies in parapsychology and Chinese traditional culture.",
+    "keywords_cn": [
+      "发刊词",
+      "开放获取",
+      "超心理学",
+      "中华传统文化",
+      "求索精神"
+    ],
+    "keywords_en": [
+      "editorial",
+      "open access",
+      "parapsychology",
+      "Chinese traditional culture",
+      "spirit of inquiry"
+    ],
+    "received": null,
+    "accepted": null,
+    "published": "2026-06-20",
+    "doi": "Pending",
+    "license": "Open Access; copyright retained by authors unless otherwise stated.",
+    "url": "articles/editorial.html",
+    "pdf": "Coming Soon",
+    "citation_cn": "张一方：《勇于求索，诗意人生——对真理的追求高于生命》，《超心理學和中華傳統文化國際雜誌》，2026，1(1)，Article 002。",
+    "citation_en": "Chang Y-F. A Life of Exploration and Poetry — The Pursuit of Truth Is Above Life Itself. International Journal of Parapsychology and Traditional Chinese Culture, 2026, 1(1), Article 002.",
+    "status": "published"
+  },
+  {
+    "journal": {
+      "title_cn": "超心理學和中華傳統文化國際雜誌",
+      "title_en": "International Journal of Parapsychology and Traditional Chinese Culture",
+      "abbrev": "IJPTCC",
+      "issn_print": "2693-8456",
+      "issn_online": "2693-8464"
+    },
+    "issue": {
+      "year": "2026",
+      "volume": "1",
+      "issue": "1",
+      "label_cn": "2026 年 · 第 1 卷 · 第 1 期",
+      "label_en": "2026, Vol. 1, No. 1"
+    },
+    "article_id": "IJPTCC-2026-1-1-003",
+    "article_no": "003",
+    "type": "Original Research Article",
+    "section": "学术论文 / Research Articles",
+    "title_cn": "世界超心理学的比较研究和中华超心理学特色",
+    "title_en": "The Comparative Study of World Parapsychology and Characters of Chinese Parapsychology",
+    "authors": [
+      {
+        "name_cn": "张一方",
+        "name_en": "Yi-Fang Chang"
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "1",
+        "name_cn": "云南大学物理系",
+        "name_en": "Department of Physics, Yunnan University"
+      }
+    ],
+    "abstract_cn": "国内外超心理学研究由来已久，由此探讨了现代中外超心理学研究的某些特点，并比较了中外研究方法和领域的异同。进而具体探索了量子超心理学和地震预测，提出超心理学和人类社会的身心灵三维世界。超心理学作为一种新兴科学必然是普适的，但对每个个体又是不同的。中华超心理学应当发挥自己的优势，取长补短，为弘扬中华传统文化，为发展世界超心理学，做出华人的贡献。",
+    "abstract_en": "The study of parapsychology has a long history. This paper discusses selected characteristics of modern parapsychology, compares Chinese and foreign research methods and fields, and further explores quantum parapsychology and earthquake prediction. It proposes a three-dimensional body-mind-spirit view of parapsychology and human society, arguing that Chinese parapsychology should develop its own strengths while learning from global research.",
+    "keywords_cn": [
+      "超心理学",
+      "中华超心理学",
+      "中华传统文化",
+      "量子超心理学",
+      "地震预测"
+    ],
+    "keywords_en": [
+      "parapsychology",
+      "Chinese parapsychology",
+      "Chinese traditional culture",
+      "quantum parapsychology",
+      "earthquake prediction"
+    ],
+    "received": null,
+    "accepted": null,
+    "published": "2026-06-20",
+    "doi": "Pending",
+    "license": "Open Access; copyright retained by authors unless otherwise stated.",
+    "url": "articles/article-001.html",
+    "pdf": "Coming Soon",
+    "citation_cn": "张一方：《世界超心理学的比较研究和中华超心理学特色》，《超心理學和中華傳統文化國際雜誌》，2026，1(1)，Article 003。",
+    "citation_en": "Chang Y-F. The Comparative Study of World Parapsychology and Characters of Chinese Parapsychology. International Journal of Parapsychology and Traditional Chinese Culture, 2026, 1(1), Article 003.",
+    "status": "published"
+  },
+  {
+    "journal": {
+      "title_cn": "超心理學和中華傳統文化國際雜誌",
+      "title_en": "International Journal of Parapsychology and Traditional Chinese Culture",
+      "abbrev": "IJPTCC",
+      "issn_print": "2693-8456",
+      "issn_online": "2693-8464"
+    },
+    "issue": {
+      "year": "2026",
+      "volume": "1",
+      "issue": "1",
+      "label_cn": "2026 年 · 第 1 卷 · 第 1 期",
+      "label_en": "2026, Vol. 1, No. 1"
+    },
+    "article_id": "IJPTCC-2026-1-1-004",
+    "article_no": "004",
+    "type": "Original Research Article",
+    "section": "学术论文 / Research Articles",
+    "title_cn": "意念力與植物顆粒相互作用的實驗研究",
+    "title_en": "An Experimental Study on the Influence of the Power of Thought on Plant Granules",
+    "authors": [
+      {
+        "name_cn": "孔令宏",
+        "name_en": "Linghong Kong",
+        "affiliation_ids": [
+          "1"
+        ]
+      },
+      {
+        "name_cn": "容志毅",
+        "name_en": "Zhiyi Rong",
+        "affiliation_ids": [
+          "2"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "1",
+        "name_cn": "浙江大学哲学学院",
+        "name_en": "School of Philosophy, Zhejiang University"
+      },
+      {
+        "id": "2",
+        "name_cn": "广西民族大学科技史与科技文化研究院",
+        "name_en": "Institute for History of Science and Scientific Culture, Guangxi Minzu University"
+      }
+    ],
+    "abstract_cn": "在严格的物理实验环境下，让摄像系统即时拍摄监控整个实验过程。采用普通人有意念和无意念，功能人无意念和有意念进行对照，通过意念施行者对置于密闭玻璃罩里盛水容器中的水施以意念力，使水面上或水体中的植物颗粒产生位移。本文通过31次远距离对照实验，报告意念力作用的宏观现象。",
+    "abstract_en": "Under strict physical experimental conditions, a camera system was used to record and monitor the entire experimental process in real time. Control conditions compared ordinary people and individuals with special abilities, with and without mental intent. The subjects applied mental intent to water in a sealed glass enclosure, causing plant particles on or within the water to shift. Through 31 long-distance controlled experiments, the paper reports macroscopic phenomena associated with mental force.",
+    "keywords_cn": [
+      "意念力",
+      "对照实验",
+      "远距离作用",
+      "物体位移",
+      "植物颗粒"
+    ],
+    "keywords_en": [
+      "power of thought",
+      "controlled experiment",
+      "long-distance interaction",
+      "object displacement",
+      "plant granules"
+    ],
+    "received": null,
+    "accepted": null,
+    "published": "2026-06-27",
+    "doi": "Pending",
+    "license": "Open Access; copyright retained by authors unless otherwise stated.",
+    "url": "articles/psychokinesis-plant-granules.html",
+    "pdf": "Coming Soon",
+    "citation_cn": "孔令宏、容志毅：《意念力與植物顆粒相互作用的實驗研究》，《超心理學和中華傳統文化國際雜誌》，2026，1(1)，Article 004。",
+    "citation_en": "Kong L-H, Rong Z-Y. An Experimental Study on the Influence of the Power of Thought on Plant Granules. International Journal of Parapsychology and Traditional Chinese Culture, 2026, 1(1), Article 004.",
+    "status": "published"
   }
 ]
