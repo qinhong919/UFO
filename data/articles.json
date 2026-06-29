@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "josephson-academic-network",
+    "href": "articles/josephson-academic-network.html",
+    "category": "scholar",
+    "type": "Featured Scholar",
+    "titleZh": "Brian D. Josephson 学术网络",
+    "titleEn": "Brian D. Josephson Academic Network",
+    "authorsZh": "本刊编辑部",
+    "authorsEn": "Editorial Office",
+    "date": "2026-06-29"
+  },
+  {
+    "slug": "psychokinesis-plant-granules",
+    "href": "articles/psychokinesis-plant-granules.html",
+    "category": "research",
+    "type": "Original Research Article",
+    "titleZh": "意念力與植物顆粒相互作用的實驗研究",
+    "titleEn": "An Experimental Study on the Influence of the Power of Thought on Plant Granules",
+    "authorsZh": "孔令宏，容志毅",
+    "authorsEn": "Linghong Kong; Zhiyi Rong",
+    "date": "2026-06-27"
+  },
+  {
+    "slug": "article-001",
+    "href": "articles/article-001.html",
+    "category": "research",
+    "type": "Original Research Article",
+    "titleZh": "世界超心理学的比较研究和中华超心理学特色",
+    "titleEn": "The Comparative Study of World Parapsychology and Characters of Chinese Parapsychology",
+    "authorsZh": "张一方",
+    "authorsEn": "Yi-Fang Chang",
+    "date": "2026-06-20"
+  },
+  {
+    "slug": "editorial",
+    "href": "articles/editorial.html",
+    "category": "editorial",
+    "type": "Editorial",
+    "titleZh": "勇于求索，诗意人生——对真理的追求高于生命",
+    "titleEn": "A Life of Exploration and Poetry — The Pursuit of Truth Is Above Life Itself",
+    "authorsZh": "张一方",
+    "authorsEn": "Yi-Fang Chang",
+    "date": "2026-06-20"
+  }
+]

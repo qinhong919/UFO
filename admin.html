@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期刊管理后台</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="journal-header">
+    <div class="logo-wrap"><img class="site-logo" src="assets/images/logo.svg" alt="超心理學和中華傳統文化國際雜誌會標"><div class="motto">管理后台 · Static CMS</div></div>
+    <div class="title-block"><h1>期刊管理后台</h1><div class="en">Journal Administration Console</div><div class="issue">录入文章 · 发布公告 · 管理页面</div></div>
+    <div class="issn"><div>GitHub Pages</div><div>qinhong919/UFO</div><div class="qr">CMS</div></div>
+  </div>
+</header>
+
+<main class="admin-shell">
+  <div class="admin-grid">
+    <aside class="admin-panel admin-menu">
+      <a href="#auth">1. 权限</a>
+      <a href="#article">2. 录入文章</a>
+      <a href="#notice">3. 发布公告</a>
+      <a href="#page">4. 管理页面</a>
+      <a href="#help">使用说明</a>
+    </aside>
+
+    <div>
+      <section id="auth" class="admin-panel">
+        <h2>1. GitHub 权限</h2>
+        <p class="admin-muted">静态网页没有真正的后台数据库。本页通过 GitHub API 写入仓库。只有拥有仓库写入权限的 GitHub Token 才能发布内容。</p>
+        <div class="admin-form">
+          <div class="admin-two">
+            <label>Owner
+              <input id="repoOwner" value="qinhong919">
+            </label>
+            <label>Repository
+              <input id="repoName" value="UFO">
+            </label>
+          </div>
+          <label>Branch
+            <input id="repoBranch" value="main">
+          </label>
+          <label>GitHub Token
+            <input id="githubToken" type="password" placeholder="只保存在当前浏览器会话，不写入网站文件">
+          </label>
+          <div class="admin-actions">
+            <button class="btn" type="button" id="saveToken">保存到当前会话</button>
+            <button class="btn" type="button" id="testToken">测试权限</button>
+          </div>
+          <div id="authStatus" class="admin-status">未连接。</div>
+        </div>
+      </section>
+
+      <section id="article" class="admin-panel">
+        <h2>2. 录入文章</h2>
+        <p class="admin-muted">填写后会自动生成文章 HTML，并套用统一文章套头。发布后会同时更新 `data/articles.json`，目录页和学术论文页可自动读取。</p>
+        <div class="admin-form">
+          <div class="admin-two">
+            <label>文章文件名 slug
+              <input id="articleSlug" placeholder="例如 remote-viewing-study">
+            </label>
+            <label>文章类型
+              <select id="articleType">
+                <option>Original Research Article</option>
+                <option>Editorial</option>
+                <option>Review Article</option>
+                <option>Field Report</option>
+                <option>Book Review</option>
+              </select>
+            </label>
+          </div>
+          <label>中文标题
+            <input id="titleZh">
+          </label>
+          <label>英文标题
+            <input id="titleEn">
+          </label>
+          <div class="admin-two">
+            <label>中文作者
+              <input id="authorsZh">
+            </label>
+            <label>英文作者
+              <input id="authorsEn">
+            </label>
+          </div>
+          <label>单位/作者信息
+            <textarea id="affiliations" placeholder="每行一条"></textarea>
+          </label>
+          <div class="admin-two">
+            <label>中文摘要
+              <textarea id="abstractZh"></textarea>
+            </label>
+            <label>英文摘要
+              <textarea id="abstractEn"></textarea>
+            </label>
+          </div>
+          <div class="admin-two">
+            <label>中文关键词
+              <input id="keywordsZh">
+            </label>
+            <label>英文关键词
+              <input id="keywordsEn">
+            </label>
+          </div>
+          <label>正文 HTML 或纯文本
+            <textarea id="articleBody" placeholder="可粘贴段落。普通文本会自动按空行分段；也可直接写 <h2>、<p> 等 HTML。"></textarea>
+          </label>
+          <label>Word 原文，可选
+            <input id="sourceFile" type="file" accept=".doc,.docx,.pdf">
+          </label>
+          <div class="admin-actions">
+            <button class="btn" type="button" id="previewArticle">预览生成 HTML</button>
+            <button class="btn" type="button" id="publishArticle">发布文章到 GitHub</button>
+          </div>
+          <textarea id="articlePreview" readonly placeholder="这里显示生成的文章 HTML"></textarea>
+          <div id="articleStatus" class="admin-status">等待录入。</div>
+        </div>
+      </section>
+
+      <section id="notice" class="admin-panel">
+        <h2>3. 发布公告</h2>
+        <div class="admin-form">
+          <label>公告标题
+            <input id="noticeTitle">
+          </label>
+          <label>公告日期
+            <input id="noticeDate" placeholder="2026-06-29">
+          </label>
+          <label>公告内容
+            <textarea id="noticeBody"></textarea>
+          </label>
+          <div class="admin-actions">
+            <button class="btn" type="button" id="publishNotice">发布公告</button>
+          </div>
+          <div id="noticeStatus" class="admin-status">等待发布。</div>
+        </div>
+      </section>
+
+      <section id="page" class="admin-panel">
+        <h2>4. 管理页面</h2>
+        <p class="admin-muted">这里可以直接读取和保存网站文件。适合小修：编委会、投稿须知、栏目介绍、首页文案等。</p>
+        <div class="admin-form">
+          <label>页面路径
+            <select id="pagePath">
+              <option>index.html</option>
+              <option>issues.html</option>
+              <option>about.html</option>
+              <option>submission.html</option>
+              <option>editorial-board.html</option>
+              <option>contact.html</option>
+              <option>sections/methods.html</option>
+              <option>sections/archive.html</option>
+              <option>sections/scholars.html</option>
+              <option>sections/international.html</option>
+              <option>sections/tradition.html</option>
+              <option>sections/debate.html</option>
+              <option>assets/css/style.css</option>
+              <option>网站页面说明.md</option>
+            </select>
+          </label>
+          <div class="admin-actions">
+            <button class="btn" type="button" id="loadPage">读取页面</button>
+            <button class="btn" type="button" id="savePage">保存页面</button>
+          </div>
+          <textarea id="pageContent" placeholder="读取后在这里编辑"></textarea>
+          <div id="pageStatus" class="admin-status">未读取。</div>
+        </div>
+      </section>
+
+      <section id="help" class="admin-panel">
+        <h2>使用说明</h2>
+        <p>1. 在 GitHub 创建一个只给 `qinhong919/UFO` 仓库写入 Contents 权限的 Token。</p>
+        <p>2. 打开本页，填入 Token，先点“测试权限”。</p>
+        <p>3. 录入文章时，后台会生成 `articles/xxx.html`，并自动套用 HTML 版文章套头。</p>
+        <p>4. 公告会写入 `data/announcements.json`。</p>
+        <p>5. 页面管理会直接改仓库文件，保存前应谨慎检查 HTML。</p>
+        <p class="admin-status admin-danger">安全说明：不要把 Token 发给别人，不要写进任何网页内容。使用完可以刷新页面清掉当前会话，或到 GitHub 删除该 Token。</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+const api = {
+  owner: () => document.getElementById("repoOwner").value.trim(),
+  repo: () => document.getElementById("repoName").value.trim(),
+  branch: () => document.getElementById("repoBranch").value.trim(),
+  token: () => document.getElementById("githubToken").value.trim() || sessionStorage.getItem("ufoGithubToken") || "",
+  url(path) {
+    return `https://api.github.com/repos/${this.owner()}/${this.repo()}/contents/${encodeURIComponent(path).replaceAll("%2F", "/")}`;
+  }
+};
+
+function $(id) { return document.getElementById(id); }
+function status(id, text) { $(id).textContent = text; }
+function esc(s) {
+  return String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function b64EncodeUnicode(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function b64DecodeUnicode(str) {
+  return decodeURIComponent(escape(atob(str.replace(/\n/g, ""))));
+}
+async function githubGet(path) {
+  const response = await fetch(`${api.url(path)}?ref=${encodeURIComponent(api.branch())}`, {
+    headers: { Authorization: `Bearer ${api.token()}`, Accept: "application/vnd.github+json" }
+  });
+  if (!response.ok) throw new Error(`${path}: ${response.status} ${await response.text()}`);
+  return await response.json();
+}
+async function githubPut(path, content, message, sha) {
+  const body = { message, content: b64EncodeUnicode(content), branch: api.branch() };
+  if (sha) body.sha = sha;
+  const response = await fetch(api.url(path), {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${api.token()}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if (!response.ok) throw new Error(`${path}: ${response.status} ${await response.text()}`);
+  return await response.json();
+}
+async function githubPutBinary(path, file, message, sha) {
+  const content = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+  const body = { message, content, branch: api.branch() };
+  if (sha) body.sha = sha;
+  const response = await fetch(api.url(path), {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${api.token()}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if (!response.ok) throw new Error(`${path}: ${response.status} ${await response.text()}`);
+  return await response.json();
+}
+async function readTextFile(path, fallback) {
+  try {
+    const file = await githubGet(path);
+    return { text: b64DecodeUnicode(file.content), sha: file.sha };
+  } catch (error) {
+    if (fallback !== undefined) return { text: fallback, sha: null };
+    throw error;
+  }
+}
+
+function paragraphsToHtml(text) {
+  const raw = String(text || "").trim();
+  if (!raw) return "";
+  if (/<(p|h2|h3|table|ol|ul|blockquote|div)\b/i.test(raw)) return raw;
+  return raw.split(/\n\s*\n/).map(p => `<p>${esc(p).replace(/\n/g, "<br>")}</p>`).join("\n");
+}
+
+function articleTemplate(data) {
+  const body = paragraphsToHtml(data.body);
+  const aff = data.affiliations.split("\n").filter(Boolean).map(line => `<p>${esc(line)}</p>`).join("");
+  const sourceLink = data.sourceHref ? `<div class="download-row"><a class="btn" href="../${esc(data.sourceHref)}">下载原文</a></div>` : "";
+  return `<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(data.titleZh || data.titleEn)}</title>
+  <meta name="description" content="${esc(data.authorsZh)}：${esc(data.titleZh || data.titleEn)}。">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="journal-header">
+    <div class="logo-wrap"><img class="site-logo" src="../assets/images/logo.svg" alt="超心理學和中華傳統文化國際雜誌會標"><div class="motto">探索人类潜能 · 服务人类福祉<br>Exploring Human Potential · Serving Human Well-being</div></div>
+    <div class="title-block"><h1>超心理學和中華傳統文化國際雜誌</h1><div class="en">International Journal of Parapsychology and Traditional Chinese Culture</div><div class="issue">2026 年 · 第 1 卷 · 第 1 期　Vol. 1, No. 1</div></div>
+    <div class="issn"><div>ISSN 2693-8456 (Print)</div><div>ISSN 2693-8464 (Online)</div><div class="qr">QR</div></div>
+  </div>
+  <nav class="nav">
+    <a href="../index.html">首页</a><a href="../issues.html">本期目录</a><a href="../articles/editorial.html">发刊词</a>
+    <a href="../sections/methods.html">学术论文</a><a href="../sections/archive.html">田野与档案</a><a href="../sections/scholars.html">重要学者</a>
+    <a href="../editorial-board.html">编委会</a><a href="../submission.html">投稿须知</a>
+  </nav>
+</header>
+<main class="container">
+  <article class="paper article-paper">
+    <section class="auto-masthead">
+      <div class="auto-masthead-top">
+        <div class="auto-masthead-logo"><img src="../assets/images/logo.svg" alt="会标"><div>探索人类潜能 · 服务人类福祉<br>Exploring Human Potential · Serving Human Well-being</div></div>
+        <div class="auto-masthead-title"><h1>超心理學和<br>中華傳統文化國際雜誌</h1><div class="en">International Journal of Parapsychology<br>and Traditional Chinese Culture</div><div class="issue-line">2026 年 · 第 1 卷 · 第 1 期　Vol. 1, No. 1</div></div>
+        <div class="auto-masthead-issn"><div>ISSN 2693-8456 (Print)</div><div>ISSN 2693-8464 (Online)</div><div class="auto-masthead-qr">QR</div></div>
+      </div>
+      <div class="center"><div class="badge">${esc(data.type)}</div></div>
+      <div class="auto-article-title"><h2>${esc(data.titleZh)}</h2><h3>${esc(data.titleEn)}</h3><div class="auto-article-meta"><p>${esc(data.authorsZh)}</p><p>${esc(data.authorsEn)}</p>${aff}</div></div>
+    </section>
+    ${sourceLink}
+    <div class="doc-body">
+      <div class="abstract-panel">
+        <p><b>摘要：</b>${esc(data.abstractZh)}</p>
+        <p><b>关键词：</b>${esc(data.keywordsZh)}</p>
+        <p><b>Abstract:</b> ${esc(data.abstractEn)}</p>
+        <p><b>Keywords:</b> ${esc(data.keywordsEn)}</p>
+      </div>
+${body}
+    </div>
+  </article>
+</main>
+<footer class="footer"><p>© International Journal of Parapsychology and Traditional Chinese Culture · Open Access · 昆明编辑部</p><p>最后更新：${new Date().toISOString().slice(0, 10)}</p></footer>
+<script src="../assets/js/script.js"><\/script>
+</body>
+</html>`;
+}
+
+function collectArticleData() {
+  const slug = $("articleSlug").value.trim().replace(/[^a-zA-Z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  if (!slug) throw new Error("请填写文章文件名 slug。");
+  return {
+    slug,
+    type: $("articleType").value,
+    titleZh: $("titleZh").value.trim(),
+    titleEn: $("titleEn").value.trim(),
+    authorsZh: $("authorsZh").value.trim(),
+    authorsEn: $("authorsEn").value.trim(),
+    affiliations: $("affiliations").value.trim(),
+    abstractZh: $("abstractZh").value.trim(),
+    abstractEn: $("abstractEn").value.trim(),
+    keywordsZh: $("keywordsZh").value.trim(),
+    keywordsEn: $("keywordsEn").value.trim(),
+    body: $("articleBody").value.trim(),
+    sourceHref: ""
+  };
+}
+
+$("saveToken").addEventListener("click", () => {
+  sessionStorage.setItem("ufoGithubToken", $("githubToken").value.trim());
+  status("authStatus", "Token 已保存到当前浏览器会话。");
+});
+$("testToken").addEventListener("click", async () => {
+  try {
+    const repo = await fetch(`https://api.github.com/repos/${api.owner()}/${api.repo()}`, {
+      headers: { Authorization: `Bearer ${api.token()}`, Accept: "application/vnd.github+json" }
+    }).then(r => r.json());
+    status("authStatus", `已连接：${repo.full_name || "未知仓库"}\n默认分支：${repo.default_branch || api.branch()}`);
+  } catch (error) {
+    status("authStatus", `连接失败：${error.message}`);
+  }
+});
+$("previewArticle").addEventListener("click", () => {
+  try {
+    const data = collectArticleData();
+    $("articlePreview").value = articleTemplate(data);
+    status("articleStatus", "已生成预览 HTML。");
+  } catch (error) {
+    status("articleStatus", error.message);
+  }
+});
+$("publishArticle").addEventListener("click", async () => {
+  try {
+    const data = collectArticleData();
+    const file = $("sourceFile").files[0];
+    if (file) {
+      const ext = file.name.split(".").pop();
+      const sourcePath = `assets/downloads/${data.slug}.${ext}`;
+      let oldSource = null;
+      try { oldSource = await githubGet(sourcePath); } catch (_) {}
+      await githubPutBinary(sourcePath, file, `Upload source file for ${data.slug}`, oldSource && oldSource.sha);
+      data.sourceHref = sourcePath;
+    }
+    const html = articleTemplate(data);
+    const articlePath = `articles/${data.slug}.html`;
+    let oldArticle = null;
+    try { oldArticle = await githubGet(articlePath); } catch (_) {}
+    await githubPut(articlePath, html, `Add article ${data.slug}`, oldArticle && oldArticle.sha);
+
+    const listFile = await readTextFile("data/articles.json", "[]");
+    const list = JSON.parse(listFile.text || "[]").filter(item => item.slug !== data.slug);
+    list.unshift({
+      slug: data.slug,
+      href: articlePath,
+      category: "research",
+      type: data.type,
+      titleZh: data.titleZh,
+      titleEn: data.titleEn,
+      authorsZh: data.authorsZh,
+      authorsEn: data.authorsEn,
+      date: new Date().toISOString().slice(0, 10)
+    });
+    await githubPut("data/articles.json", JSON.stringify(list, null, 2), `Update article list for ${data.slug}`, listFile.sha);
+    status("articleStatus", `发布完成：${articlePath}\n目录数据已更新。GitHub Pages 稍后生效。`);
+  } catch (error) {
+    status("articleStatus", `发布失败：${error.message}`);
+  }
+});
+$("publishNotice").addEventListener("click", async () => {
+  try {
+    const item = { title: $("noticeTitle").value.trim(), date: $("noticeDate").value.trim() || new Date().toISOString().slice(0, 10), body: $("noticeBody").value.trim() };
+    if (!item.title || !item.body) throw new Error("请填写公告标题和内容。");
+    const listFile = await readTextFile("data/announcements.json", "[]");
+    const list = JSON.parse(listFile.text || "[]");
+    list.unshift(item);
+    await githubPut("data/announcements.json", JSON.stringify(list, null, 2), `Add announcement ${item.date}`, listFile.sha);
+    status("noticeStatus", "公告发布完成。");
+  } catch (error) {
+    status("noticeStatus", `发布失败：${error.message}`);
+  }
+});
+$("loadPage").addEventListener("click", async () => {
+  try {
+    const path = $("pagePath").value;
+    const file = await readTextFile(path);
+    $("pageContent").value = file.text;
+    $("pageContent").dataset.sha = file.sha || "";
+    status("pageStatus", `已读取：${path}`);
+  } catch (error) {
+    status("pageStatus", `读取失败：${error.message}`);
+  }
+});
+$("savePage").addEventListener("click", async () => {
+  try {
+    const path = $("pagePath").value;
+    const sha = $("pageContent").dataset.sha;
+    await githubPut(path, $("pageContent").value, `Update ${path} from admin`, sha);
+    status("pageStatus", `已保存：${path}`);
+  } catch (error) {
+    status("pageStatus", `保存失败：${error.message}`);
+  }
+});
+</script>
+</body>
+</html>
